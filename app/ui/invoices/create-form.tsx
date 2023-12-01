@@ -16,10 +16,10 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
   const initialState = { message: null, errors: {} };
   const [state, dispatch] = useFormState(createInvoice, initialState);
 
-  console.log(state)
+  console.log(state);
 
   return (
-      <form action={dispatch}>
+    <form action={dispatch}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">
@@ -47,11 +47,11 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
           </div>
           <div id="customer-error" aria-live="polite" aria-atomic="true">
             {state.errors?.customerId &&
-            state.errors.customerId.map((error: string) => (
+              state.errors.customerId.map((error: string) => (
                 <p className="mt-2 text-sm text-red-500" key={error}>
                   {error}
                 </p>
-            ))}
+              ))}
           </div>
         </div>
 
@@ -76,11 +76,11 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
           </div>
           <div id="amount-error" aria-live="polite" aria-atomic="true">
             {state.errors?.amount &&
-            state.errors.amount.map((error: string) => (
+              state.errors.amount.map((error: string) => (
                 <p className="mt-2 text-sm text-red-500" key={error}>
                   {error}
                 </p>
-            ))}
+              ))}
           </div>
         </div>
 
@@ -126,11 +126,11 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
             </div>
             <div id="status-error" aria-live="polite" aria-atomic="true">
               {state.errors?.status &&
-              state.errors.status.map((error: string) => (
+                state.errors.status.map((error: string) => (
                   <p className="mt-2 text-sm text-red-500" key={error}>
                     {error}
                   </p>
-              ))}
+                ))}
             </div>
           </div>
         </fieldset>

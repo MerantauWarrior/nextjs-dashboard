@@ -23,10 +23,10 @@ export default function EditInvoiceForm({
   const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
   const [state, dispatch] = useFormState(updateInvoiceWithId, initialState);
 
-  console.log(state)
+  console.log(state);
 
   return (
-      <form action={dispatch}>
+    <form action={dispatch}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">
@@ -54,11 +54,11 @@ export default function EditInvoiceForm({
           </div>
           <div id="customer-error" aria-live="polite" aria-atomic="true">
             {state.errors?.customerId &&
-            state.errors.customerId.map((error: string) => (
+              state.errors.customerId.map((error: string) => (
                 <p className="mt-2 text-sm text-red-500" key={error}>
                   {error}
                 </p>
-            ))}
+              ))}
           </div>
         </div>
 
@@ -84,11 +84,11 @@ export default function EditInvoiceForm({
           </div>
           <div id="amount-error" aria-live="polite" aria-atomic="true">
             {state.errors?.amount &&
-            state.errors.amount.map((error: string) => (
+              state.errors.amount.map((error: string) => (
                 <p className="mt-2 text-sm text-red-500" key={error}>
                   {error}
                 </p>
-            ))}
+              ))}
           </div>
         </div>
 
